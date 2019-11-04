@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18G87" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Currency" representedClassName=".Currency" syncable="YES" codeGenerationType="class">
+        <attribute name="code" attributeType="String" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="currencyPairBase" toMany="YES" deletionRule="Nullify" destinationEntity="CurrencyPair" inverseName="baseCurrency" inverseEntity="CurrencyPair" syncable="YES"/>
+        <relationship name="currencyPairDestination" toMany="YES" deletionRule="Nullify" destinationEntity="CurrencyPair" inverseName="destinationCurrency" inverseEntity="CurrencyPair" syncable="YES"/>
+    </entity>
+    <entity name="CurrencyPair" representedClassName="CurrencyPair" syncable="YES" codeGenerationType="class">
+        <relationship name="baseCurrency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="currencyPairBase" inverseEntity="Currency" syncable="YES"/>
+        <relationship name="destinationCurrency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Currency" inverseName="currencyPairDestination" inverseEntity="Currency" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Currency" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="CurrencyPair" positionX="-54" positionY="18" width="128" height="75"/>
+    </elements>
+</model>
